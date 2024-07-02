@@ -8,19 +8,19 @@ export default function useDebounce(
   const timer = useRef<any>();
 
   return useCallback(
-    function (...args) {
+    function (...args: []) {
       console.log("called");
       let callNow = immediate && !timer.current;
 
       clearTimeout(timer.current);
       timer.current = setTimeout(() => {
         if (!callNow) {
-          handler.call(this, ...args);
+          handler.apply(this, args);
         }
       }, delay);
 
       if (callNow) {
-        handler.call(this, ...args);
+        handler.apply(this, args);
       }
     },
     [immediate, delay, handler]

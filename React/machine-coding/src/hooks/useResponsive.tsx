@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import useThrottle from "./useThrottling";
+// import useThrottle from "./useThrottling";
 
 export default function useResponsive() {
   const [device, setDevice] = useState({
@@ -21,7 +21,7 @@ export default function useResponsive() {
 
     setDevice({ isDesktop, isMobile, isTablet });
   };
-  const throttledHandler = useThrottle(handler, 100);
+  // const throttledHandler = useThrottle(handler, 100);
 
   useEffect(() => {
     window.addEventListener("resize", handler);

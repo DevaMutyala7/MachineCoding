@@ -1,11 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { HeaderContainer, LogoContainer } from "../components/LayoutStyles";
+import { HeaderContainer, LogoContainer } from "../styles/LayoutStyles";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import useResponsive from "../hooks/useResponsive";
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 
-export default function Header({ isOpen, navToggler }) {
+export default function Header({
+  isOpen,
+  navToggler,
+}: {
+  isOpen: boolean;
+  navToggler: () => void;
+}) {
   const { isMobile } = useResponsive();
   const theme = useContext(ThemeContext);
 

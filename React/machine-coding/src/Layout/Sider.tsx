@@ -1,11 +1,16 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { SiderContainer } from "../components/LayoutStyles";
+import { SiderContainer } from "../styles/LayoutStyles";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import useResponsive from "../hooks/useResponsive";
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 
-export default function Sider({ isOpen, navToggler, isMobile }) {
+type SiderProps = {
+  isOpen: boolean;
+  navToggler: () => void;
+  isMobile: boolean;
+};
+
+export default function Sider({ isOpen, navToggler, isMobile }: SiderProps) {
   const theme = useContext(ThemeContext);
   return (
     <SiderContainer className={isOpen ? "visible" : "invisible"} theme={theme}>
@@ -22,8 +27,6 @@ export default function Sider({ isOpen, navToggler, isMobile }) {
           onClick={navToggler}
         />
       )}
-
-      <p>Sider</p>
     </SiderContainer>
   );
 }

@@ -1,10 +1,14 @@
 import { useCallback, useRef } from "react";
 
-export default function useThrottle(handler, delay, immediate = false) {
+export default function useThrottle(
+  handler: () => void,
+  delay: number,
+  immediate: boolean = false
+) {
   const timer = useRef<any>();
 
   return useCallback(
-    function (...args) {
+    function (...args: []) {
       let callNow = immediate && !timer.current;
 
       if (callNow) {
