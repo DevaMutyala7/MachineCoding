@@ -2,7 +2,7 @@ import { RouteConfig } from "types/RouteConfig";
 import { RouteId, Routepath } from "types/routes";
 import Home from "views/Home";
 import { NotFound } from "views/NotFound";
-import TicTacToe from "views/TicTacToe";
+import TicTacToe from "views/TicTacToe/TicTacToe";
 
 export const Routes: RouteConfig[] = [
   {

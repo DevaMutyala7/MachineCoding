@@ -1,8 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SiderContainer } from "../styles/LayoutStyles";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { useContext } from "react";
-import { ThemeContext } from "../contexts/ThemeContext";
+import SiderNav from "./Sidernav";
 
 type SiderProps = {
   isOpen: boolean;
@@ -11,9 +10,8 @@ type SiderProps = {
 };
 
 export default function Sider({ isOpen, navToggler, isMobile }: SiderProps) {
-  const theme = useContext(ThemeContext);
   return (
-    <SiderContainer className={isOpen ? "visible" : "invisible"} theme={theme}>
+    <SiderContainer className={isOpen ? "visible" : "invisible"}>
       {isMobile && isOpen && (
         <FontAwesomeIcon
           icon={faXmark}
@@ -27,6 +25,7 @@ export default function Sider({ isOpen, navToggler, isMobile }: SiderProps) {
           onClick={navToggler}
         />
       )}
+      <SiderNav />
     </SiderContainer>
   );
 }

@@ -2,12 +2,10 @@ import { createGlobalStyle } from "styled-components";
 
 export const theme = {
   colors: {
-    primary: "#4A90E2",
-    secondary: "#50E3C2",
+    primary: "#E7E8D1",
+    secondary: "#A7BEAE",
     background: "#F5F7FA",
     text: "#333",
-    header: "#E7E8D1",
-    navbar: "#A7BEAE",
     button: "#E74C3C",
     buttonText: "#FFF",
   },

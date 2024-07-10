@@ -4,8 +4,6 @@ export type Theme = {
     secondary: string;
     background: string;
     text: string;
-    header: string;
-    navbar: string;
     button: string;
     buttonText: string;
   };

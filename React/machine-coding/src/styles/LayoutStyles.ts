@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Theme } from "types/theme";
 
 export const LayoutContainer = styled.div`
   display: grid;
@@ -20,8 +19,8 @@ export const LayoutContainer = styled.div`
   }
 `;
 
-export const HeaderContainer = styled.div<{ theme: Theme | null }>`
-  background: ${({ theme }) => theme.colors.header};
+export const HeaderContainer = styled.div`
+  background: ${({ theme }) => theme.colors.primary};
   padding: 10px;
   display: flex;
   grid-area: head;
@@ -33,11 +32,11 @@ export const MainContainer = styled.div`
   margin: auto;
 `;
 
-export const SiderContainer = styled.nav<{ theme: Theme | null }>`
+export const SiderContainer = styled.nav`
   grid-area: nav;
-  background: ${({ theme }) => theme.colors.navbar};
+  background: ${({ theme }) => theme.colors.secondary};
   height: 100%;
-  align-content: center;
+
   transition: transform 0.3s ease;
 
   @media (max-width: 768px) {
