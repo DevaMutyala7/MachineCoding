@@ -1,21 +1,32 @@
-import { Wrapper } from "styles/Wrapper";
+import { Wrapper } from "components/Wrapper";
 import { Box } from "./Box";
 import GameControls from "./GameControls";
 import useGameState from "./useGameState";
 import GameResults from "./GameResults";
 
 export default function TicTacToe() {
-  const { userMove, handleSelectedTurn, layout, handleLayout, winner } =
-    useGameState();
+  const {
+    userMove,
+    handleSelectedTurn,
+    layout,
+    handleLayout,
+    winner,
+    restartGame,
+  } = useGameState();
 
   return (
     <div>
-      <h2>Tic-Tac-Toe</h2>
+      <h2>Tic-Tac-Toe With a 🤖</h2>
       <GameControls
         handleSelectedTurn={handleSelectedTurn}
         selectedTurn={userMove}
       />
-      <Wrapper width={150} display="flex" flexflow="wrap">
+      <Wrapper
+        width="150px"
+        display="flex"
+        flexflow="wrap"
+        justifycontent="center"
+      >
         {layout.map((item, index) => {
           return (
             <Box
@@ -28,7 +39,7 @@ export default function TicTacToe() {
           );
         })}
       </Wrapper>
-      <GameResults winner={winner} />
+      <GameResults winner={winner} restartGame={restartGame} />
     </div>
   );
 }

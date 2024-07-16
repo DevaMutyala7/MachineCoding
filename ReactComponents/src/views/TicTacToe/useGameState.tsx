@@ -23,7 +23,6 @@ export default function useGameState() {
     let winner = checkWinner(layout);
 
     if (winner) {
-      console.log("winner", winner);
       setWinner(winner);
     }
 
@@ -97,7 +96,7 @@ export default function useGameState() {
 
   const makeAIMove = () => {
     const board = [...layout];
-    let finalIndex = 0;
+    let finalIndex: any;
     let bestScore = -Infinity;
 
     for (let i = 0; i < board.length; i++) {
@@ -112,13 +111,29 @@ export default function useGameState() {
       }
     }
 
-    setLayout((prev) => {
-      let arr = [...prev];
-      arr[finalIndex] = [aiMove];
-      return arr;
-    });
+    if (finalIndex !== undefined) {
+      setLayout((prev) => {
+        let arr = [...prev];
+        arr[finalIndex] = [aiMove];
+        return arr;
+      });
+    }
     setCurrentMove(userMove);
   };
 
-  return { handleSelectedTurn, layout, userMove, handleLayout, winner };
+  const restartGame = () => {
+    setLayout([[], [], [], [], [], [], [], [], []]);
+    setUserMove(undefined);
+    setWinner(null);
+    setCurrentMove(undefined);
+  };
+
+  return {
+    handleSelectedTurn,
+    layout,
+    userMove,
+    handleLayout,
+    winner,
+    restartGame,
+  };
 }

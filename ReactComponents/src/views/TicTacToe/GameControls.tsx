@@ -22,7 +22,7 @@ export default function GameControls({
     handleSelectedTurn(val);
   };
   return (
-    <div style={{ padding: "5px" }}>
+    <div style={{ padding: "5px", textAlign: "center" }}>
       <RadioButton
         options={options}
         selected={selectedTurn}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type Options = {
   label: string;
@@ -20,8 +20,14 @@ export default function RadioButton({
     setOptionSelected(true);
   };
 
+  useEffect(() => {
+    if (!selected) {
+      setOptionSelected(false);
+    }
+  }, [selected]);
+
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "flex", justifyContent: "center" }}>
       <h5>Choose your option:</h5>
       {options.map(({ value, label }) => {
         return (
