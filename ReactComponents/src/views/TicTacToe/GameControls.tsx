@@ -1,5 +1,4 @@
 import RadioButton from "components/RadioButton";
-import { USER_MOVE } from "./types";
 
 const options = [
   {
