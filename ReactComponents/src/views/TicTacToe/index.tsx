@@ -16,7 +16,6 @@ export default function TicTacToe() {
 
   return (
     <div>
-      <h2>Tic-Tac-Toe With a 🤖</h2>
       <GameControls
         handleSelectedTurn={handleSelectedTurn}
         selectedTurn={userMove}

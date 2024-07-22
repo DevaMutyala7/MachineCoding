@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { routeConfig } from "consts/routeConfig";
+import { routeConfig } from "routeConfig";
 import { Items, List, StyledLink } from "styles/NavbarStyles";
 import { StyledPara } from "styles/Styledpara";
 

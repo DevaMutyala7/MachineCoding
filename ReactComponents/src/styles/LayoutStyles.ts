@@ -30,6 +30,13 @@ export const MainContainer = styled.div`
   grid-area: main;
   text-align: center;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  background: #f5f5f5;
+
+  width: 100%;
+  height: 100%;
+  padding: 20px;
 `;
 
 export const SiderContainer = styled.nav`

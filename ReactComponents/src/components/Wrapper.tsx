@@ -8,6 +8,9 @@ type WrapperProps = {
   flexgap?: string;
   margin?: string;
   justifycontent?: string;
+  alignitems?: string;
+  gap?: string;
+  position?: string;
 };
 
 const Wrapper = styled.div.withConfig({
@@ -20,6 +23,7 @@ const Wrapper = styled.div.withConfig({
       "flexGap",
       "justifyContent",
       "margin",
+      "position",
     ].includes(prop),
 })<WrapperProps>`
   ${({
@@ -28,8 +32,11 @@ const Wrapper = styled.div.withConfig({
     display,
     flexflow,
     flexgap,
+    gap,
+    alignitems = "center",
     justifycontent = "center",
     margin = "auto",
+    position = "static",
   }) => `
     width: ${width || "auto"};
     height: ${height ? `${height}px` : "auto"};
@@ -38,7 +45,9 @@ const Wrapper = styled.div.withConfig({
     gap: ${flexgap || "0"};
     justify-content: ${justifycontent};
     margin: ${margin};
-    align-items:center;
+    align-items:${alignitems};
+    gap:${gap};
+    position:${position};
   `}
 `;
 

@@ -5,10 +5,14 @@ import Sider from "../Layout/Sider";
 
 import React, { useEffect, useState } from "react";
 import useResponsive from "../hooks/useResponsive";
+import { useLocation } from "react-router";
+import { Routes } from "Routes";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const { isMobile } = useResponsive();
   const [openMobileSider, setOpenMobileSider] = useState(true);
+  const location = useLocation();
+  const route = Routes.find((route) => route.path === location.pathname);
 
   function handleNavBar() {
     setOpenMobileSider((open) => !open);
@@ -30,7 +34,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         isMobile={isMobile}
       />
 
-      <MainContent>{children}</MainContent>
+      <MainContent route={route}>{children}</MainContent>
     </LayoutContainer>
   );
 }
