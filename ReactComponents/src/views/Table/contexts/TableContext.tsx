@@ -46,10 +46,6 @@ export default function TableContextProvider<T>({
   loading,
 }: Props<T>) {
   const [tableData, setTableData] = useState<T[]>();
-  const [checkBoxVal, setCheckBoxVal] = useState(() => {
-    const storedValue = localStorage.getItem("checked");
-    return storedValue ? JSON.parse(storedValue) : [];
-  });
 
   const originalData = useRef<T[]>();
 
@@ -62,10 +58,6 @@ export default function TableContextProvider<T>({
       setTableData(data);
     }
   }, [data]);
-
-  const handleCheckBoxChange = useCallback((values: string[]) => {
-    setCheckBoxVal(values);
-  }, []);
 
   const handleSorting = useCallback(
     (column: string, sortOrder?: SortOrder) => {
@@ -141,8 +133,6 @@ export default function TableContextProvider<T>({
     resetSearch,
     handleFiltering,
     originalData: originalData.current,
-    handleCheckBoxChange,
-    checkBoxVal,
   };
 
   return (
