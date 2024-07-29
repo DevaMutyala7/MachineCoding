@@ -16,6 +16,8 @@ export interface columnConfig<T> {
   defaultSortOrder?: SortOrder;
   sorter?: (a: T, b: T) => void;
   width?: number;
+  searcInColumn?: boolean;
+  dynamicFilters?: boolean;
 }
 
 export interface TableProps<T> {
