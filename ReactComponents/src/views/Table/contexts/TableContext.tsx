@@ -1,6 +1,5 @@
 import {
   createContext,
-  useCallback,
   useEffect,
   useLayoutEffect,
   useRef,
@@ -59,42 +58,39 @@ export default function TableContextProvider<T>({
     }
   }, [data]);
 
-  const handleSorting = useCallback(
-    (column: string, sortOrder?: SortOrder) => {
-      if (sortOrder === SortOrder.ascending) {
-        setTableData((prev) =>
-          prev
-            ? [
-                ...prev.sort((a, b) => {
-                  const aColumn = a as { [key: string]: any };
-                  const bColumn = b as { [key: string]: any };
-                  return typeof aColumn[column] === "string"
-                    ? aColumn[column].localeCompare(bColumn[column])
-                    : aColumn[column] - bColumn[column];
-                }),
-              ]
-            : undefined
-        );
-      } else if (sortOrder === SortOrder.descending) {
-        setTableData((prev) => {
-          return prev
-            ? [
-                ...prev.sort((a, b) => {
-                  const aColumn = a as { [key: string]: any };
-                  const bColumn = b as { [key: string]: any };
-                  return typeof aColumn[column] === "string"
-                    ? bColumn[column].localeCompare(aColumn[column])
-                    : bColumn[column] - aColumn[column];
-                }),
-              ]
-            : undefined;
-        });
-      } else {
-        setTableData(data);
-      }
-    },
-    [data]
-  );
+  const handleSorting = (column: string, sortOrder?: SortOrder) => {
+    if (sortOrder === SortOrder.ascending) {
+      setTableData((prev) =>
+        prev
+          ? [
+              ...prev.sort((a, b) => {
+                const aColumn = a as { [key: string]: any };
+                const bColumn = b as { [key: string]: any };
+                return typeof aColumn[column] === "string"
+                  ? aColumn[column].localeCompare(bColumn[column])
+                  : aColumn[column] - bColumn[column];
+              }),
+            ]
+          : undefined
+      );
+    } else if (sortOrder === SortOrder.descending) {
+      setTableData((prev) => {
+        return prev
+          ? [
+              ...prev.sort((a, b) => {
+                const aColumn = a as { [key: string]: any };
+                const bColumn = b as { [key: string]: any };
+                return typeof aColumn[column] === "string"
+                  ? bColumn[column].localeCompare(aColumn[column])
+                  : bColumn[column] - aColumn[column];
+              }),
+            ]
+          : undefined;
+      });
+    } else {
+      setTableData(tableData);
+    }
+  };
 
   const handleSearch = (column: string, value?: string) => {
     if (value) {
@@ -110,7 +106,6 @@ export default function TableContextProvider<T>({
   };
 
   const handleFiltering = (column: string, values: string[]) => {
-    localStorage.setItem("checked", JSON.stringify(values));
     if (values.length) {
       let filteredData = originalData.current?.filter((item) => {
         const itemColumn = item as { [key: string]: any };

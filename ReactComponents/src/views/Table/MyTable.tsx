@@ -22,7 +22,7 @@ export default function MyTable() {
       dataIndex: "title",
       key: "title",
       width: 60,
-      searcInColumn: true,
+      searchInColumn: true,
     },
     {
       title: "Category",

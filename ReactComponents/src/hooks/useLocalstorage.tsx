@@ -7,6 +7,7 @@ export default function useLocalStorage(key: string) {
   });
 
   useEffect(() => {
+    console.log("hook val", key);
     if (key) {
       localStorage.setItem(key, JSON.stringify(value));
     }

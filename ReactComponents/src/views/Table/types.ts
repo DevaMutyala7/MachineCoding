@@ -16,7 +16,7 @@ export interface columnConfig<T> {
   defaultSortOrder?: SortOrder;
   sorter?: (a: T, b: T) => void;
   width?: number;
-  searcInColumn?: boolean;
+  searchInColumn?: boolean;
   dynamicFilters?: boolean;
 }
 
