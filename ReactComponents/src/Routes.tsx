@@ -2,6 +2,7 @@ import { RouteConfig } from "types/RouteConfig";
 import { RouteId, Routepath } from "types/routes";
 import Home from "views/Home";
 import { NotFound } from "views/NotFound";
+import MyStepper from "views/Stepper/MyStepper";
 import MyTable from "views/Table/MyTable";
 import TicTacToe from "views/TicTacToe";
 
@@ -25,6 +26,13 @@ export const Routes: RouteConfig[] = [
     component: <MyTable />,
     title: "Table",
     description: "A Custom Table With all the functionalities",
+  },
+  {
+    id: RouteId.Stepper,
+    path: Routepath.stepper,
+    component: <MyStepper />,
+    title: "Multi Stepper",
+    description: "This is just a multi stepper",
   },
   {
     id: RouteId.NotFound,

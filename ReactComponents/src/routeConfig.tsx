@@ -2,6 +2,7 @@ import {
   faChessBoard,
   faHome,
   faTable,
+  faStairs,
 } from "@fortawesome/free-solid-svg-icons";
 
 export const routeConfig = [
@@ -19,5 +20,10 @@ export const routeConfig = [
     path: "/table",
     icon: faTable,
     label: "Table",
+  },
+  {
+    path: "/stepper",
+    icon: faStairs,
+    label: "Stepper",
   },
 ];
