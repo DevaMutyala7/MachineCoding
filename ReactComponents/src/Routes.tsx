@@ -1,6 +1,7 @@
 import { RouteConfig } from "types/RouteConfig";
 import { RouteId, Routepath } from "types/routes";
 import Home from "views/Home";
+import MySwitch from "views/MySwitch";
 import { NotFound } from "views/NotFound";
 import MyStepper from "views/Stepper/MyStepper";
 import MyTable from "views/Table/MyTable";
@@ -33,6 +34,14 @@ export const Routes: RouteConfig[] = [
     component: <MyStepper />,
     title: "Multi Stepper",
     description: "This is just a multi stepper",
+  },
+  {
+    id: RouteId.Switch,
+    path: Routepath.switch,
+    component: <MySwitch />,
+    title: "Switch Component",
+    description:
+      "Switch-case component is just like switch-case method, the only difference is it conditionally renders elements that pass different cases",
   },
   {
     id: RouteId.NotFound,

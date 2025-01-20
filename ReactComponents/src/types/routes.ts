@@ -3,6 +3,7 @@ export enum RouteId {
   Table,
   TicTacToe,
   Stepper,
+  Switch,
   NotFound,
 }
 
@@ -11,5 +12,6 @@ export enum Routepath {
   ticTacToe = "/tic-tac-toe",
   table = "/table",
   stepper = "/stepper",
+  switch = "/switch",
   NotFound = "*",
 }
