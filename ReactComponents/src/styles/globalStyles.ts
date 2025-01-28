@@ -23,6 +23,10 @@ export const GlobalStyles = createGlobalStyle`
   box-sizing: border-box;
 }
 
+html{
+  height: 100%;
+}
+
 body {
   margin: 0px;
   padding: 0px;
@@ -36,7 +40,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   margin: 0;
   padding:0;
 }

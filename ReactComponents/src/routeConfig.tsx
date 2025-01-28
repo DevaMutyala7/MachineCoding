@@ -4,6 +4,7 @@ import {
   faTable,
   faStairs,
   faShuffle,
+  faScroll,
 } from "@fortawesome/free-solid-svg-icons";
 
 export const routeConfig = [
@@ -31,5 +32,10 @@ export const routeConfig = [
     path: "/switch",
     icon: faShuffle,
     label: "Switch Component",
+  },
+  {
+    path: "/infinite-scroll",
+    icon: faScroll,
+    label: "Products",
   },
 ];

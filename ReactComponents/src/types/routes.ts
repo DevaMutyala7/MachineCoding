@@ -4,6 +4,7 @@ export enum RouteId {
   TicTacToe,
   Stepper,
   Switch,
+  InfiniteScroll,
   NotFound,
 }
 
@@ -13,5 +14,6 @@ export enum Routepath {
   table = "/table",
   stepper = "/stepper",
   switch = "/switch",
+  infiniteScroll = "/infinite-scroll",
   NotFound = "*",
 }
