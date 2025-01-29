@@ -1,12 +1,8 @@
-import { columnConfig } from "./types";
+import { useContext } from "react";
+import { TableContext } from "./contexts/TableContext";
 
-export default function TableDataView<T>({
-  tableData,
-  columnConfig,
-}: {
-  tableData?: T[];
-  columnConfig: columnConfig<T>[];
-}) {
+export default function TableDataView() {
+  const { tableData, columnConfig } = useContext(TableContext);
   return (
     <>
       {tableData &&

@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
-export const Button = styled.button`
-  padding: 8px 16px;
+type ButtonProps = {
+  padding?: string;
+};
+
+export const Button = styled.button<ButtonProps>`
+  padding: ${({ padding }) => padding || "8px 16px"};
   border: 1px solid rgba(191, 191, 191, 1);
   border-radius: 6px;
   cursor: pointer;

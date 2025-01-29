@@ -1,0 +1,39 @@
+.stepper-wrapper {
+  width: 100%;
+}
+
+.steps {
+  list-style: none;
+  display: flex;
+  width: 90%;
+  margin: auto;
+  justify-content: space-between;
+  padding: 0px;
+  position: relative;
+}
+
+.step {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.step.completed {
+  background-color: green;
+}
+
+.progress-line {
+  background-color: black;
+  height: 4px;
+  width: 0;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+}

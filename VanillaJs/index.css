@@ -1,0 +1,30 @@
+#main-wrapper {
+  text-align: center;
+  margin: auto;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+}
+
+.game-board {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+}
