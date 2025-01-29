@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vanilla Js</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="main-wrapper">
+      <!-- Controls -->
+      <section>
+        <p>Choose your option:</p>
+        <div>
+          <div>
+            <input type="radio" name="player-option" value="X" checked />
+            <label for="player-option">X</label>
+          </div>
+
+          <div>
+            <input type="radio" name="player-option" value="O" />
+            <label for="player-option">O</label>
+          </div>
+        </div>
+      </section>
+
+      <!-- game board -->
+      <section class="game-board">
+        <div class="row">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+        <div class="row">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+        <div class="row">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Result -->
+    <section class="result"></section>
+    <script src="minimax.js"></script>
+  </body>
+</html>
