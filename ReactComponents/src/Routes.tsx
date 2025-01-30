@@ -1,3 +1,4 @@
+import { AuthContextProvider } from "contexts/AuthContext";
 import { RouteConfig } from "types/RouteConfig";
 import { RouteId, Routepath } from "types/routes";
 import Bubble from "views/Bubble";
@@ -8,6 +9,7 @@ import Products from "views/Products";
 import MyStepper from "views/Stepper/MyStepper";
 import MyTable from "views/Table/MyTable";
 import TicTacToe from "views/TicTacToe";
+import TwoStepLogin from "views/TwoStepLogin";
 
 export const Routes: RouteConfig[] = [
   {
@@ -58,6 +60,18 @@ export const Routes: RouteConfig[] = [
     component: <Bubble />,
     title: "Staggering Movement",
     description: "Implemented a staggering movement",
+  },
+  {
+    id: RouteId.TwoStepAuth,
+    path: Routepath.twoStepAuth,
+    component: (
+      <AuthContextProvider>
+        <TwoStepLogin />
+      </AuthContextProvider>
+    ),
+    title: "Two Step Login Form",
+    description:
+      "Google like login UX that completes the logic flow in two steps, First, where the email is verified, and second where password verification is done",
   },
   {
     id: RouteId.NotFound,
