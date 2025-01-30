@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/MachineCoding/static/css/main.795141dc.css",
+    "main.js": "/MachineCoding/static/js/main.b192d495.js",
+    "index.html": "/MachineCoding/index.html",
+    "main.795141dc.css.map": "/MachineCoding/static/css/main.795141dc.css.map",
+    "main.b192d495.js.map": "/MachineCoding/static/js/main.b192d495.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.795141dc.css",
+    "static/js/main.b192d495.js"
+  ]
+}
