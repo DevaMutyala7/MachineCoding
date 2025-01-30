@@ -5,6 +5,7 @@ export enum RouteId {
   Stepper,
   Switch,
   InfiniteScroll,
+  Bubbles,
   NotFound,
 }
 
@@ -15,5 +16,6 @@ export enum Routepath {
   stepper = "/stepper",
   switch = "/switch",
   infiniteScroll = "/infinite-scroll",
+  bubbles = "/bubbles",
   NotFound = "*",
 }
