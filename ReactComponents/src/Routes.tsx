@@ -9,6 +9,7 @@ import Products from "views/Products";
 import MyStepper from "views/Stepper/MyStepper";
 import MyTable from "views/Table/MyTable";
 import TicTacToe from "views/TicTacToe";
+import TodoList from "views/TodoList";
 import TwoStepLogin from "views/TwoStepLogin";
 
 export const Routes: RouteConfig[] = [
@@ -72,6 +73,13 @@ export const Routes: RouteConfig[] = [
     title: "Two Step Login Form",
     description:
       "Google like login UX that completes the logic flow in two steps, First, where the email is verified, and second where password verification is done",
+  },
+  {
+    id: RouteId.TodoList,
+    path: Routepath.todoList,
+    component: <TodoList />,
+    title: "Todo List",
+    description: "An editable Todo-list",
   },
   {
     id: RouteId.NotFound,

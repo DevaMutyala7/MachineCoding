@@ -7,6 +7,7 @@ export enum RouteId {
   InfiniteScroll,
   Bubbles,
   TwoStepAuth,
+  TodoList,
   NotFound,
 }
 
@@ -19,5 +20,6 @@ export enum Routepath {
   infiniteScroll = "/infinite-scroll",
   bubbles = "/bubbles",
   twoStepAuth = "/twoStepLogin",
+  todoList = "/todos",
   NotFound = "*",
 }
