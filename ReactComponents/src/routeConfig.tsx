@@ -5,6 +5,9 @@ import {
   faStairs,
   faShuffle,
   faScroll,
+  faHandsBubbles,
+  faKey,
+  faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
 export const routeConfig = [
@@ -37,5 +40,20 @@ export const routeConfig = [
     path: "/infinite-scroll",
     icon: faScroll,
     label: "Products",
+  },
+  {
+    path: "/bubbles",
+    icon: faHandsBubbles,
+    label: "Bubbles",
+  },
+  {
+    path: "/twoStepLogin",
+    icon: faKey,
+    label: "Two step Login",
+  },
+  {
+    path: "/todos",
+    icon: faCheck,
+    label: "Todo List",
   },
 ];

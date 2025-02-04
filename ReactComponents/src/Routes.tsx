@@ -1,5 +1,7 @@
+import { AuthContextProvider } from "contexts/AuthContext";
 import { RouteConfig } from "types/RouteConfig";
 import { RouteId, Routepath } from "types/routes";
+import Bubble from "views/Bubble";
 import Home from "views/Home";
 import MySwitch from "views/MySwitch";
 import { NotFound } from "views/NotFound";
@@ -7,6 +9,8 @@ import Products from "views/Products";
 import MyStepper from "views/Stepper/MyStepper";
 import MyTable from "views/Table/MyTable";
 import TicTacToe from "views/TicTacToe";
+import TodoList from "views/TodoList";
+import TwoStepLogin from "views/TwoStepLogin";
 
 export const Routes: RouteConfig[] = [
   {
@@ -50,6 +54,32 @@ export const Routes: RouteConfig[] = [
     component: <Products />,
     title: "Products Page",
     description: "Displaying the products with infinite scroll",
+  },
+  {
+    id: RouteId.Bubbles,
+    path: Routepath.bubbles,
+    component: <Bubble />,
+    title: "Staggering Movement",
+    description: "Implemented a staggering movement",
+  },
+  {
+    id: RouteId.TwoStepAuth,
+    path: Routepath.twoStepAuth,
+    component: (
+      <AuthContextProvider>
+        <TwoStepLogin />
+      </AuthContextProvider>
+    ),
+    title: "Two Step Login Form",
+    description:
+      "Google like login UX that completes the logic flow in two steps, First, where the email is verified, and second where password verification is done",
+  },
+  {
+    id: RouteId.TodoList,
+    path: Routepath.todoList,
+    component: <TodoList />,
+    title: "Todo List",
+    description: "An editable Todo-list",
   },
   {
     id: RouteId.NotFound,

@@ -9,7 +9,7 @@ export const List = styled.ul`
   padding: 0;
 `;
 
-export const Items = styled.li`
+export const Items = styled.li<{ isActive: boolean }>`
   width: 100%;
   color: inherit;
 
@@ -19,6 +19,13 @@ export const Items = styled.li`
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
+
+  background: ${(props) =>
+    props.isActive ? props.theme.colors.primary : "inherit"};
+
+  .active {
+    background: ${(props) => props.theme.colors.primary};
+  }
 
   &:hover {
     background: ${(props) => props.theme.colors.primary};
