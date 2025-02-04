@@ -8,6 +8,7 @@ export enum RouteId {
   Bubbles,
   TwoStepAuth,
   TodoList,
+  Pagination,
   NotFound,
 }
 
@@ -21,5 +22,6 @@ export enum Routepath {
   bubbles = "/bubbles",
   twoStepAuth = "/twoStepLogin",
   todoList = "/todos",
+  pagination = "/pagination",
   NotFound = "*",
 }

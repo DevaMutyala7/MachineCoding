@@ -56,4 +56,9 @@ export const routeConfig = [
     icon: faCheck,
     label: "Todo List",
   },
+  {
+    path: "/pagination",
+    icon: faScroll,
+    label: "Pagination",
+  },
 ];

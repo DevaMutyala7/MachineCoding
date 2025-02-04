@@ -5,6 +5,7 @@ import Bubble from "views/Bubble";
 import Home from "views/Home";
 import MySwitch from "views/MySwitch";
 import { NotFound } from "views/NotFound";
+import Pagination from "views/Pagination";
 import Products from "views/Products";
 import MyStepper from "views/Stepper/MyStepper";
 import MyTable from "views/Table/MyTable";
@@ -80,6 +81,13 @@ export const Routes: RouteConfig[] = [
     component: <TodoList />,
     title: "Todo List",
     description: "An editable Todo-list",
+  },
+  {
+    id: RouteId.Pagination,
+    path: Routepath.pagination,
+    component: <Pagination />,
+    title: "Pagination with search",
+    description: "Search with a pagination component with api call",
   },
   {
     id: RouteId.NotFound,
