@@ -85,7 +85,7 @@ export const Routes: RouteConfig[] = [
   {
     id: RouteId.AnalogClock,
     path: Routepath.analogClock,
-    component: <AnalogClock />,
+    component: <AnalogClock date={new Date()} />,
     title: "Analog clock",
     description: "A simple analog clock with hours,minutes, seconds hand",
   },

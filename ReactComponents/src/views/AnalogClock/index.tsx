@@ -2,11 +2,11 @@ import { useEffect, useReducer } from "react";
 import "./styles.css";
 import { ActionType, clockReducer } from "./utils";
 
-export default function AnalogClock() {
+export default function AnalogClock({ date }: { date: Date }) {
   const [clock, dispatchClock] = useReducer(clockReducer, {
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
+    hours: date.getHours(),
+    minutes: date.getMinutes(),
+    seconds: date.getSeconds(),
   });
 
   useEffect(() => {
@@ -21,11 +21,24 @@ export default function AnalogClock() {
 
   return (
     <div className="clock">
-      <div className="hands">
-        <p className="hours"></p>
-        <p className="minutes"></p>
-        <p className="seconds"></p>
-      </div>
+      <p
+        className="hours"
+        style={{
+          transform: `translateX(-50%) rotateZ(${clock.hours * 30}deg)`,
+        }}
+      ></p>
+      <p
+        className="minutes"
+        style={{
+          transform: `rotateZ(${clock.minutes * 6}deg)`,
+        }}
+      ></p>
+      <p
+        className="seconds"
+        style={{
+          transform: `translateX(-50%) rotateZ(${clock.seconds * 6}deg)`,
+        }}
+      ></p>
     </div>
   );
 }

@@ -12,21 +12,17 @@ type ClockAction = {
   type: ActionType;
 };
 
-function updateMinSec(time: number) {
-  return time === 59 ? 0 : time + 1;
-}
-
 function clockReducer(state: ClockState, action: ClockAction): ClockState {
   switch (action.type) {
     case ActionType.UPDATE_CLOCK:
       let newHours = state.hours;
-      if (newHours === 11) {
+      if (newHours === 11 && state.minutes === 0) {
         newHours = 0;
-      } else {
+      } else if (newHours < 11 && state.minutes === 0) {
         newHours += 1;
       }
-      let newSeconds = updateMinSec(state.seconds);
-      let newMinutes = updateMinSec(state.minutes);
+      let newSeconds = state.seconds === 59 ? 0 : state.seconds + 1;
+      let newMinutes = state.seconds === 59 ? state.minutes + 1 : state.minutes;
 
       return {
         ...state,
