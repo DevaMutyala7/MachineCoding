@@ -1,6 +1,7 @@
 import { AuthContextProvider } from "contexts/AuthContext";
 import { RouteConfig } from "types/RouteConfig";
 import { RouteId, Routepath } from "types/routes";
+import AnalogClock from "views/AnalogClock";
 import Bubble from "views/Bubble";
 import Home from "views/Home";
 import MySwitch from "views/MySwitch";
@@ -80,6 +81,13 @@ export const Routes: RouteConfig[] = [
     component: <TodoList />,
     title: "Todo List",
     description: "An editable Todo-list",
+  },
+  {
+    id: RouteId.AnalogClock,
+    path: Routepath.analogClock,
+    component: <AnalogClock />,
+    title: "Analog clock",
+    description: "A simple analog clock with hours,minutes, seconds hand",
   },
   {
     id: RouteId.NotFound,

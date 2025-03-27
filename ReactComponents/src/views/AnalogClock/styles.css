@@ -1,0 +1,28 @@
+.clock {
+  width: 300px;
+  height: 300px;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hands {
+  width: 100%;
+  background-color: lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hours::after {
+  display: inline-block;
+  position: absolute;
+  top: 50%; /* Start from the center */
+  left: 50%;
+  width: 20px; /* Line thickness */
+  height: 50px; /* Line length */
+  background-color: black;
+}
