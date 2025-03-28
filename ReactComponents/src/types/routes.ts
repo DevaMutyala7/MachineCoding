@@ -9,6 +9,7 @@ export enum RouteId {
   TwoStepAuth,
   TodoList,
   AnalogClock,
+  TicTacToeNXN,
   NotFound,
 }
 
@@ -23,5 +24,6 @@ export enum Routepath {
   twoStepAuth = "/twoStepLogin",
   todoList = "/todos",
   analogClock = "/clock",
+  ticTacToeNXN = "/tic-tac-toe-NXN",
   NotFound = "*",
 }
