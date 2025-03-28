@@ -11,6 +11,7 @@ import MyTable from "views/Table/MyTable";
 import TicTacToe from "views/TicTacToe";
 import TodoList from "views/TodoList";
 import TwoStepLogin from "views/TwoStepLogin";
+import AutoSuggestion from "views/TypeAhead/AutoSuggestion";
 
 export const Routes: RouteConfig[] = [
   {
@@ -80,6 +81,13 @@ export const Routes: RouteConfig[] = [
     component: <TodoList />,
     title: "Todo List",
     description: "An editable Todo-list",
+  },
+  {
+    id: RouteId.TypeAhead,
+    path: Routepath.typeahead,
+    component: <AutoSuggestion />,
+    title: "Type Ahead",
+    description: "This is typeahead",
   },
   {
     id: RouteId.NotFound,

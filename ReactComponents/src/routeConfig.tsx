@@ -8,6 +8,7 @@ import {
   faHandsBubbles,
   faKey,
   faCheck,
+  faKeyboard,
 } from "@fortawesome/free-solid-svg-icons";
 
 export const routeConfig = [
@@ -55,5 +56,10 @@ export const routeConfig = [
     path: "/todos",
     icon: faCheck,
     label: "Todo List",
+  },
+  {
+    path: "/typeahead",
+    icon: faKeyboard,
+    label: "Typeahead",
   },
 ];
