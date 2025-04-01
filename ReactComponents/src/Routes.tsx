@@ -5,6 +5,9 @@ import AnalogClock from "views/AnalogClock";
 import Bubble from "views/Bubble";
 import Home from "views/Home";
 import MySwitch from "views/MySwitch";
+import NestedCheckBox from "views/NestedCheckbox";
+import CheckBoxProvider from "views/NestedCheckbox/Context/CheckBoxContext";
+import { data } from "views/NestedCheckbox/data";
 import { NotFound } from "views/NotFound";
 import Products from "views/Products";
 import MyStepper from "views/Stepper/MyStepper";
@@ -89,6 +92,17 @@ export const Routes: RouteConfig[] = [
     component: <AnalogClock date={new Date()} />,
     title: "Analog clock",
     description: "A simple analog clock with hours,minutes, seconds hand",
+  },
+  {
+    id: RouteId.NestedComments,
+    path: Routepath.nestedComments,
+    component: (
+      <CheckBoxProvider>
+        <NestedCheckBox data={data} />
+      </CheckBoxProvider>
+    ),
+    title: "Nested checkbox",
+    description: "Ran out of description",
   },
   {
     id: RouteId.TicTacToeNXN,
