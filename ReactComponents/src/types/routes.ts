@@ -10,6 +10,7 @@ export enum RouteId {
   TodoList,
   AnalogClock,
   NestedComments,
+  TicTacToeNXN,
   NotFound,
 }
 
@@ -25,5 +26,6 @@ export enum Routepath {
   todoList = "/todos",
   analogClock = "/clock",
   nestedComments = "/nested-checkbox",
+  ticTacToeNXN = "/tic-tac-toe-NXN",
   NotFound = "*",
 }

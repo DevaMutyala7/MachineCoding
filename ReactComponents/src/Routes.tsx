@@ -13,6 +13,7 @@ import Products from "views/Products";
 import MyStepper from "views/Stepper/MyStepper";
 import MyTable from "views/Table/MyTable";
 import TicTacToe from "views/TicTacToe";
+import TicTacToeNXN from "views/TicTacToeNXN";
 import TodoList from "views/TodoList";
 import TwoStepLogin from "views/TwoStepLogin";
 
@@ -102,6 +103,13 @@ export const Routes: RouteConfig[] = [
     ),
     title: "Nested checkbox",
     description: "Ran out of description",
+  },
+  {
+    id: RouteId.TicTacToeNXN,
+    path: Routepath.ticTacToeNXN,
+    component: <TicTacToeNXN />,
+    title: "Tic Tac Toe NXN",
+    description: "A tic tac toe game with NXN board",
   },
   {
     id: RouteId.NotFound,

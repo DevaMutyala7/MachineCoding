@@ -10,6 +10,7 @@ import {
   faCheck,
   faClock,
   faCheckDouble,
+  faGamepad,
 } from "@fortawesome/free-solid-svg-icons";
 
 export const routeConfig = [
@@ -67,5 +68,10 @@ export const routeConfig = [
     path: "/nested-checkbox",
     icon: faCheckDouble,
     label: "Checkboxs",
+  },
+  {
+    path: "/tic-tac-toe-NXN",
+    icon: faGamepad,
+    label: "NXN board",
   },
 ];
