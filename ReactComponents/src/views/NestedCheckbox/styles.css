@@ -1,0 +1,11 @@
+.nested-box {
+  margin-left: 20px;
+}
+
+.wrapper {
+  text-align: initial;
+}
+
+.checkbox {
+  cursor: pointer !important;
+}

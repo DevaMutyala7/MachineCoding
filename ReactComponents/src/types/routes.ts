@@ -9,6 +9,7 @@ export enum RouteId {
   TwoStepAuth,
   TodoList,
   AnalogClock,
+  NestedComments,
   NotFound,
 }
 
@@ -23,5 +24,6 @@ export enum Routepath {
   twoStepAuth = "/twoStepLogin",
   todoList = "/todos",
   analogClock = "/clock",
+  nestedComments = "/nested-checkbox",
   NotFound = "*",
 }
