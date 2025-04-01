@@ -30,35 +30,56 @@ export default function CheckBoxProvider({
   const [checkBoxes, setCheckBoxes] = useState<NestedCheck>(data);
 
   const updateChildren = (id: string, isChecked: boolean) => {
-    let obj = checkBoxes[id];
+    let obj: Record<string, NestedCheckTree> = {};
 
-    function getChildrenRecursively(children?: string[]): any {
-      children?.forEach((id) => {
-        updateChildren(id, isChecked);
+    function getChildrenRecursively(id: string) {
+      obj[id] = { ...checkBoxes[id], isChecked };
+      obj[id].children?.forEach((id) => {
+        getChildrenRecursively(id);
       });
     }
 
-    getChildrenRecursively(obj.children);
+    getChildrenRecursively(id);
+
+    return obj;
+  };
+
+  function updateParent(tree: NestedCheck, id: string | null): any {
+    if (!id) return {};
+
+    if (!tree[id].parentId) return {};
+
+    const parentId = tree[id].parentId;
+
+    if (!parentId) return {};
+
+    const parent = tree[parentId];
+
+    const allChecked = parent.children?.every(
+      (childId) => tree[childId].isChecked
+    );
 
     return {
-      [id]: {
-        ...obj,
-        isChecked,
+      [parentId]: {
+        ...parent,
+        isChecked: allChecked,
       },
+      ...updateParent(tree, parent.parentId),
     };
-  };
+  }
 
   function handleChecked(id: string) {
     const isChecked = !checkBoxes[id].isChecked;
     const updatedChildren = updateChildren(id, isChecked);
-    console.log("updated", updatedChildren);
-    // const updatedState = { ...checkBoxes, ...updatedChildren };
 
-    // const updatedParents = updateParent(checkBoxes[id].parentId, updatedState);
+    const updatedState = { ...checkBoxes, ...updatedChildren };
+
+    const updatedParent = updateParent(updatedState, id);
 
     setCheckBoxes((prev) => ({
       ...prev,
       ...updatedChildren,
+      ...updatedParent,
     }));
   }
 
